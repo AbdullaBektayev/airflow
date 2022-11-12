@@ -23,9 +23,14 @@ class GenericProviderCreateAPIView(CreateAPIView):
             )
         return self.json_file_path
 
+    def _sleep_time(self):
+        return sleep(self.sleep_time)
+
     def post(self, request, *args, **kwargs):
         json_file_path = self._get_json_file()
         response_json = self._get_json_response(json_file_path=json_file_path)
+        self._sleep_time()
+        # print('a', a)
         return Response(response_json, status=status.HTTP_201_CREATED)
 
 
