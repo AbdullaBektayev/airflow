@@ -1,4 +1,5 @@
 import json
+from asyncio import sleep
 
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
@@ -9,6 +10,7 @@ from apps.accounts.api.permissions import IsNotAuthenticated
 class GenericProviderListAPIView(ListAPIView):
     permission_classes = [IsNotAuthenticated]
     json_file_path = None
+    sleep_time = 30
 
     @staticmethod
     def _get_json_response(json_file_path):
@@ -26,6 +28,7 @@ class GenericProviderListAPIView(ListAPIView):
     def get(self, request, *args, **kwargs):
         json_file_path = self._get_json_file()
         response_json = self._get_json_response(json_file_path=json_file_path)
+        sleep(self.sleep_time)
         return Response(response_json)
 
 
@@ -35,4 +38,5 @@ class ProviderAListAPIView(GenericProviderListAPIView):
 
 class ProviderBListAPIView(GenericProviderListAPIView):
     json_file_path = "src/apps/provider/helper_data/response_b.json"
+    sleep_time = 60
 
