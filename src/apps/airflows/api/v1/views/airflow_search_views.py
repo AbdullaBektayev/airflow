@@ -1,10 +1,12 @@
 import asyncio
 import httpx
+from django.db.models import Prefetch, F
 from rest_framework import status
-from rest_framework.generics import CreateAPIView, get_object_or_404
+from rest_framework.generics import CreateAPIView, get_object_or_404, RetrieveAPIView
 from rest_framework.response import Response
 
 from apps.accounts.api.permissions import IsNotAuthenticated
+from apps.airflows.api.v1.serializers import AirflowSearchCreateSerializer
 from apps.airflows.models.airflow_models import Flight, Provider, AirflowSearch
 
 from apps.airflows.models.airflow_models import Currency
@@ -12,6 +14,7 @@ from apps.airflows.models.airflow_models import Currency
 
 class AirflowSearchCreateAPIView(CreateAPIView):
     permission_classes = [IsNotAuthenticated]
+    serializer_class = AirflowSearchCreateSerializer
 
     @staticmethod
     async def provider_search(provider_url, airflow_search):
@@ -46,3 +49,24 @@ class AirflowSearchCreateAPIView(CreateAPIView):
         loop.create_task(self.search_on_providers(airflow_search=airflow_search))
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
+
+class AirflowSearchRetrieveAPIView(RetrieveAPIView):
+
+    def get_queryset(self):
+
+        currency = get_object_or_404(Currency, title=self.kwargs.get("currency_title"))
+
+        queryset = super().get_queryset().prefetch_related(
+            Prefetch(
+                "flights",
+                Flight.objects.select_related("currency").annotate(
+                    total_price=F("base_price") + F("tax_price"),
+                    converted_price=(F("total_price")*F("currency__in_kzt"))/currency.in_kzt,
+                    converted_currency=currency.title
+                ).order_by(
+                    "converted_price"
+                )
+            )
+        )
+
+        return queryset
