@@ -5,7 +5,6 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView, get_object_or_404, RetrieveAPIView
 from rest_framework.response import Response
 
-from apps.accounts.api.permissions import IsNotAuthenticated
 from apps.airflows.api.v1.serializers import AirflowSearchCreateSerializer
 from apps.airflows.models.airflow_models import Flight, Provider, AirflowSearch
 
@@ -13,7 +12,6 @@ from apps.airflows.models.airflow_models import Currency
 
 
 class AirflowSearchCreateAPIView(CreateAPIView):
-    permission_classes = [IsNotAuthenticated]
     serializer_class = AirflowSearchCreateSerializer
 
     @staticmethod

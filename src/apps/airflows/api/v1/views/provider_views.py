@@ -5,11 +5,8 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 
-from apps.accounts.api.permissions import IsNotAuthenticated
-
 
 class GenericProviderCreateAPIView(CreateAPIView):
-    permission_classes = [IsNotAuthenticated]
     json_file_path = None
     sleep_time = 30
 

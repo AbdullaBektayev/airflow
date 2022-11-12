@@ -11,3 +11,4 @@ pytz
 redis==4.3.4
 sentry-sdk==1.9.8
 dj-database-url==1.0.0
+xmltodict==0.13.0
