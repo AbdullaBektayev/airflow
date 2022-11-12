@@ -4,8 +4,8 @@
 
 ### Documentation: ###
 
-* [Architecture overview](docs/architecture_overview.md)
-* [Backend: Pre-commit hook](docs/pre_commit_hook.md)
+* [Architecture overview](src/docs/architecture_overview.md)
+* [Backend: Pre-commit hook](src/docs/pre_commit_hook.md)
 
 ### API documentation: ###
 
