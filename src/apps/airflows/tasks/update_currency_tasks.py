@@ -5,7 +5,7 @@ import requests
 import xmltodict
 
 import settings
-from apps.airflows.models.airflow_models import Currency
+from apps.airflows.models import Currency
 from src import celery_app
 
 

@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     "django_filters",
     "drf_yasg",
     # our apps
-    "src.apps.common",
     "src.apps.airflows",
+    "src.apps.common",
 ] + env.list("SRC_DEV_INSTALLED_APPS", default=[])
 
 MIDDLEWARE = [
