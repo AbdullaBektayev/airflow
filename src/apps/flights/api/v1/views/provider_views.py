@@ -1,5 +1,5 @@
 import json
-from asyncio import sleep
+from time import sleep
 
 from rest_framework import status
 from rest_framework.generics import CreateAPIView
@@ -26,7 +26,6 @@ class GenericProviderCreateAPIView(CreateAPIView):
     def post(self, request, *args, **kwargs):
         json_file_path = self._get_json_file()
         response_json = self._get_json_response(json_file_path=json_file_path)
-        sleep(self.sleep_time)
         return Response(response_json, status=status.HTTP_201_CREATED)
 
 

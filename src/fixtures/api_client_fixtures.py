@@ -48,3 +48,15 @@ class _CustomAPIClient(APIClient):
 @pytest.fixture()
 def unauthorized_api_client():
     return _CustomAPIClient()
+
+
+@pytest.fixture()
+def api_client(user_account):
+    def _api_client(auth_user=None):
+        if auth_user is None:
+            auth_user = user_account()
+        client = _CustomAPIClient()
+        client.force_authenticate(auth_user)
+        return client
+
+    return _api_client

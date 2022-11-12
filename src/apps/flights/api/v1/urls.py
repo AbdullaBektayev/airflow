@@ -4,8 +4,8 @@ from src.apps.flights.api.v1.views.airflow_search_views import AirflowSearchCrea
 from src.apps.flights.api.v1.views.provider_views import ProviderAListAPIView, ProviderBListAPIView
 
 urlpatterns = [
-    path("provider-a/search/", ProviderAListAPIView.as_view(), name="provider-a"),
-    path("provider-b/search/", ProviderBListAPIView.as_view(), name="provider-b"),
+    path("provider-a/search/", ProviderAListAPIView.as_view(), name="provider-a-search"),
+    path("provider-b/search/", ProviderBListAPIView.as_view(), name="provider-b-search"),
     path("airflow/search/", AirflowSearchCreateAPIView.as_view(), name="airflow-search-create"),
     path("airflow/<uuid:pk>/<str:currency>/", ProviderBListAPIView.as_view(), name="airflow-search-retrieve"),
 ]
