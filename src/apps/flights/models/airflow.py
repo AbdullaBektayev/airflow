@@ -2,7 +2,7 @@ from typing import Tuple
 
 from django.db import models
 
-from apps.common.models import CoreModel
+from src.apps.common.models import CoreModel
 from django.utils.translation import gettext_lazy as _
 
 

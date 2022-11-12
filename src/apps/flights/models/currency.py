@@ -1,6 +1,6 @@
 from django.db import models
 
-from apps.common.models import CoreModel
+from src.apps.common.models import CoreModel
 from settings import DEFAULT_MAX_DIGITS, DEFAULT_DECIMAL_PLACES
 
 

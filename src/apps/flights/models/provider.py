@@ -1,6 +1,6 @@
 from django.db import models
 
-from apps.common.models import CoreModel
+from src.apps.common.models import CoreModel
 
 
 class Provider(CoreModel):
