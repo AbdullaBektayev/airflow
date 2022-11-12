@@ -1,13 +1,14 @@
 import json
 from asyncio import sleep
 
-from rest_framework.generics import ListAPIView
+from rest_framework import status
+from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 
 from apps.accounts.api.permissions import IsNotAuthenticated
 
 
-class GenericProviderListAPIView(ListAPIView):
+class GenericProviderCreateAPIView(CreateAPIView):
     permission_classes = [IsNotAuthenticated]
     json_file_path = None
     sleep_time = 30
@@ -25,18 +26,18 @@ class GenericProviderListAPIView(ListAPIView):
             )
         return self.json_file_path
 
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         json_file_path = self._get_json_file()
         response_json = self._get_json_response(json_file_path=json_file_path)
         sleep(self.sleep_time)
-        return Response(response_json)
+        return Response(response_json, status=status.HTTP_201_CREATED)
 
 
-class ProviderAListAPIView(GenericProviderListAPIView):
-    json_file_path = "src/apps/provider/helper_data/response_a.json"
+class ProviderAListAPIView(GenericProviderCreateAPIView):
+    json_file_path = "src/apps/airflows/helper_data/response_a.json"
 
 
-class ProviderBListAPIView(GenericProviderListAPIView):
-    json_file_path = "src/apps/provider/helper_data/response_b.json"
+class ProviderBListAPIView(GenericProviderCreateAPIView):
+    json_file_path = "src/apps/airflows/helper_data/response_b.json"
     sleep_time = 60
 
