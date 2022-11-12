@@ -18,8 +18,8 @@ admin_urlpatterns = [
 
 api_v1_urlpatterns = [
     path(
-        f"{API_PREFIX}/v1/airflows/",
-        include(("src.apps.airflows.api.v1.urls", "airflows"), namespace="api-v1-airflows"),
+        f"{API_PREFIX}/v1/flights/",
+        include(("src.apps.flights.api.v1.urls", "flights"), namespace="api-v1-flights"),
     )
 ]
 

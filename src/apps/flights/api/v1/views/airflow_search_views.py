@@ -5,8 +5,8 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView, get_object_or_404, RetrieveAPIView
 from rest_framework.response import Response
 
-from apps.airflows.api.v1.serializers import AirflowSearchCreateSerializer
-from apps.airflows.models import Flight, Provider, AirflowSearch, Currency
+from apps.flights.api.v1.serializers import AirflowSearchCreateSerializer
+from apps.flights.models import Flight, Provider, AirflowSearch, Currency
 
 
 class AirflowSearchCreateAPIView(CreateAPIView):

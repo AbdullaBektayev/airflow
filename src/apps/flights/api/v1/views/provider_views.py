@@ -31,10 +31,10 @@ class GenericProviderCreateAPIView(CreateAPIView):
 
 
 class ProviderAListAPIView(GenericProviderCreateAPIView):
-    json_file_path = "src/apps/airflows/helper_data/response_a.json"
+    json_file_path = "src/apps/flights/helper_data/response_a.json"
 
 
 class ProviderBListAPIView(GenericProviderCreateAPIView):
-    json_file_path = "src/apps/airflows/helper_data/response_b.json"
+    json_file_path = "src/apps/flights/helper_data/response_b.json"
     sleep_time = 60
 

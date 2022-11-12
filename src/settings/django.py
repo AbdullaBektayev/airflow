@@ -1,7 +1,9 @@
 import os
 
 from pathlib import Path
+from typing import Tuple
 
+from corsheaders.defaults import default_methods, default_headers
 from django.core.management.utils import get_random_secret_key
 
 import dj_database_url
@@ -39,19 +41,26 @@ INSTALLED_APPS = [
     "django_filters",
     "drf_yasg",
     # our apps
-    "src.apps.airflows",
     "src.apps.common",
+    "src.apps.flights",
 ] + env.list("SRC_DEV_INSTALLED_APPS", default=[])
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ] + env.list("SRC_DEV_MIDDLEWARE", default=[])
+
+# CorsHeaders
+CORS_ORIGIN_ALLOW_ALL: bool = True
+CORS_ALLOW_METHODS: Tuple = default_methods
+CORS_ALLOW_HEADERS: Tuple = default_headers
+CORS_ALLOW_CREDENTIALS: bool = True
 
 ROOT_URLCONF = "src.urls"
 

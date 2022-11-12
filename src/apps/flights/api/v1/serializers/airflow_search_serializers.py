@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from apps.airflows.models import AirflowSearch
+from apps.flights.models import AirflowSearch
 from settings import DEFAULT_MAX_DIGITS, DEFAULT_DECIMAL_PLACES
 
 

@@ -5,7 +5,7 @@ import requests
 import xmltodict
 
 import settings
-from apps.airflows.models import Currency
+from apps.flights.models import Currency
 from src import celery_app
 
 
@@ -22,7 +22,7 @@ def get_update_currency(response_dict) -> List[Currency]:
 
 
 @celery_app.task(
-    name="airflows.update_currency_task",
+    name="flights.update_currency_task",
 )
 def update_currency_task():
     today = datetime.date.today()
