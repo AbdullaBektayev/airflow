@@ -18,8 +18,8 @@ admin_urlpatterns = [
 
 api_v1_urlpatterns = [
     path(
-        f"{API_PREFIX}/v1/accounts/",
-        include(("src.apps.accounts.api.v1.urls", "accounts"), namespace="api-v1-accounts"),
+        f"{API_PREFIX}/v1/airflows/",
+        include(("src.apps.airflows.api.v1.urls", "airflows"), namespace="api-v1-airflows"),
     )
 ]
 

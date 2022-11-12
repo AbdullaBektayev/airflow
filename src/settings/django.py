@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "drf_yasg",
     # our apps
     "src.apps.common",
-    "src.apps.accounts",
+    "src.apps.airflows",
 ] + env.list("SRC_DEV_INSTALLED_APPS", default=[])
 
 MIDDLEWARE = [
@@ -82,7 +82,6 @@ else:
         "default": dj_database_url.parse("postgresql://postgres:awesome_password_1@localhost:5432/src_db"),
     }
 
-AUTH_USER_MODEL = "accounts.UserAccount"
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
