@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
-from apps.flights.models import AirflowSearch
-from settings import DEFAULT_MAX_DIGITS, DEFAULT_DECIMAL_PLACES
+from src.apps.flights.models import AirflowSearch
+from src.settings import DEFAULT_MAX_DIGITS, DEFAULT_DECIMAL_PLACES
 
 
 class AirflowSearchCreateSerializer(serializers.ModelSerializer):

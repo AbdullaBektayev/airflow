@@ -1,7 +1,7 @@
 from django.db import models
 
 from src.apps.common.models import CoreModel
-from settings import DEFAULT_MAX_DIGITS, DEFAULT_DECIMAL_PLACES
+from src.settings import DEFAULT_MAX_DIGITS, DEFAULT_DECIMAL_PLACES
 
 
 class Currency(CoreModel):

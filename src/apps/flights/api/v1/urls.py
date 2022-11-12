@@ -1,7 +1,7 @@
 from django.urls import path
 
-from apps.flights.api.v1.views.airflow_search_views import AirflowSearchCreateAPIView
-from apps.flights.api.v1.views.provider_views import ProviderAListAPIView, ProviderBListAPIView
+from src.apps.flights.api.v1.views.airflow_search_views import AirflowSearchCreateAPIView
+from src.apps.flights.api.v1.views.provider_views import ProviderAListAPIView, ProviderBListAPIView
 
 urlpatterns = [
     path("provider-a/search/", ProviderAListAPIView.as_view(), name="provider-a"),

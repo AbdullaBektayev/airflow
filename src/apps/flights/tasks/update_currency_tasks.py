@@ -5,7 +5,7 @@ import requests
 import xmltodict
 
 import settings
-from apps.flights.models import Currency
+from src.apps.flights.models import Currency
 from src import celery_app
 
 
