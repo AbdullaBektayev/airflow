@@ -3,10 +3,11 @@ import os
 from pathlib import Path
 from typing import Tuple
 
-from corsheaders.defaults import default_methods, default_headers
 from django.core.management.utils import get_random_secret_key
 
 import dj_database_url
+
+from corsheaders.defaults import default_headers, default_methods
 
 from .environment import env
 
@@ -140,4 +141,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 DEFAULT_DECIMAL_PLACES: int = 2
 DEFAULT_MAX_DIGITS: int = 12
 
-NATIONAL_BANK_API: str = env.str("NATIONAL_BANK_API", default='https://www.nationalbank.kz/rss/get_rates.cfm')
+NATIONAL_BANK_API: str = env.str("NATIONAL_BANK_API", default="https://www.nationalbank.kz/rss/get_rates.cfm")

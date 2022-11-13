@@ -1,7 +1,7 @@
 from django.db import models
 
 from src.apps.common.models import CoreModel
-from src.settings import DEFAULT_MAX_DIGITS, DEFAULT_DECIMAL_PLACES
+from src.settings import DEFAULT_DECIMAL_PLACES, DEFAULT_MAX_DIGITS
 
 
 class Currency(CoreModel):
@@ -12,4 +12,3 @@ class Currency(CoreModel):
 
     def __str__(self):
         return f"fullname: [{self.fullname}], in_kzt: [{self.in_kzt}]"
-

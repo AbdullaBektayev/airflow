@@ -6,7 +6,10 @@ from model_bakery import baker
 
 
 __all__: Tuple = (
-    "currency", "currency_usd", "currency_eur", "currency_kzt",
+    "currency",
+    "currency_usd",
+    "currency_eur",
+    "currency_kzt",
 )
 
 
@@ -21,22 +24,16 @@ def currency(db):  # pylint: disable=unused-argument
 @pytest.fixture()
 def currency_usd(db):  # pylint: disable=unused-argument
 
-    return baker.make(
-        "flights.Currency", title='USD', fullname='dollar', in_kzt=470.00
-    )
+    return baker.make("flights.Currency", title="USD", fullname="dollar", in_kzt=470.00)
 
 
 @pytest.fixture()
 def currency_eur(db):  # pylint: disable=unused-argument
 
-    return baker.make(
-        "flights.Currency", title='EUR', fullname='euro', in_kzt=500.00
-    )
+    return baker.make("flights.Currency", title="EUR", fullname="euro", in_kzt=500.00)
 
 
 @pytest.fixture()
 def currency_kzt(db):  # pylint: disable=unused-argument
 
-    return baker.make(
-        "flights.Currency", title='KZT', fullname='tenge', in_kzt=1
-    )
+    return baker.make("flights.Currency", title="KZT", fullname="tenge", in_kzt=1)

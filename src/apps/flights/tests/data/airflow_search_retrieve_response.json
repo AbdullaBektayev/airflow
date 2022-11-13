@@ -1,29 +1,29 @@
 {
-  "tickets":[
+  "state": "completed",
+  "tickets": [
     {
-      "pricing":{
-        "base_price":291.84,
-        "tax_price":0.0,
-        "total_price":291.84,
-        "currency":"EUR"
+      "price": {
+        "converted_currency": "KZT",
+        "converted_price": 145920.0
       },
-      "price":{
-        "converted_price":145920.0,
-        "converted_currency":"KZT"
+      "pricing": {
+        "base_price": 291.84,
+        "currency": "EUR",
+        "tax_price": 0.0,
+        "total_price": 291.84
       }
     },
     {
-      "pricing":{
-        "base_price":500.0,
-        "tax_price":0.0,
-        "total_price":500.0,
-        "currency":"USD"
+      "price": {
+        "converted_currency": "KZT",
+        "converted_price": 235000.0
       },
-      "price":{
-        "converted_price":235000.0,
-        "converted_currency":"KZT"
+      "pricing": {
+        "base_price": 500.0,
+        "currency": "USD",
+        "tax_price": 0.0,
+        "total_price": 500.0
       }
     }
-  ],
-  "state":"completed"
+  ]
 }

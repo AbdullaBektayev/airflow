@@ -5,9 +5,7 @@ import pytest
 from model_bakery import baker
 
 
-__all__: Tuple = (
-    "ticket", "ticket_a", "ticket_b"
-)
+__all__: Tuple = ("ticket", "ticket_a", "ticket_b")
 
 
 @pytest.fixture()

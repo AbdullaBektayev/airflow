@@ -5,9 +5,7 @@ import pytest
 from model_bakery import baker
 
 
-__all__: Tuple = (
-    "user_account",
-)
+__all__: Tuple = ("user_account",)
 
 
 @pytest.fixture()
@@ -16,4 +14,3 @@ def user_account(db):  # pylint: disable=unused-argument
         return baker.make("auth.User", **kwargs)
 
     return _user
-

@@ -1,11 +1,13 @@
 import json
+
 from time import sleep
 
-from drf_yasg import openapi
-from drf_yasg.utils import swagger_auto_schema, no_body
 from rest_framework import status
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
+
+from drf_yasg import openapi
+from drf_yasg.utils import no_body, swagger_auto_schema
 
 from src.apps.flights.api.v1.serializers.provider_serializer import ProviderSerializer
 
@@ -22,9 +24,7 @@ class GenericProviderCreateAPIView(CreateAPIView):
 
     def _get_json_file(self):
         if self.json_file_path is None:
-            raise ValueError(
-                "Doesn't have json file path"
-            )
+            raise ValueError("Doesn't have json file path")
         return self.json_file_path
 
     def _sleep_time(self):
@@ -32,7 +32,7 @@ class GenericProviderCreateAPIView(CreateAPIView):
 
     @swagger_auto_schema(
         request_body=no_body,
-        responses={status.HTTP_201_CREATED: openapi.Response("Return static response", ProviderSerializer)}
+        responses={status.HTTP_201_CREATED: openapi.Response("Return static response", ProviderSerializer)},
     )
     def post(self, request, *args, **kwargs):
         json_file_path = self._get_json_file()
@@ -48,4 +48,3 @@ class ProviderAListAPIView(GenericProviderCreateAPIView):
 class ProviderBListAPIView(GenericProviderCreateAPIView):
     json_file_path = "src/apps/flights/helper_data/response_b.json"
     sleep_time = 60
-

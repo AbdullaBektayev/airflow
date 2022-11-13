@@ -1,12 +1,14 @@
 from django.db.models import Prefetch
-from drf_yasg import openapi
-from drf_yasg.utils import swagger_auto_schema, no_body
+
 from rest_framework import status
-from rest_framework.generics import CreateAPIView, get_object_or_404, RetrieveAPIView
+from rest_framework.generics import CreateAPIView, RetrieveAPIView, get_object_or_404
 from rest_framework.response import Response
 
+from drf_yasg import openapi
+from drf_yasg.utils import no_body, swagger_auto_schema
+
 from src.apps.flights.api.v1.serializers import AirflowSearchCreateSerializer, AirflowSearchRetrieveSerializer
-from src.apps.flights.models import Ticket, AirflowSearch, Currency
+from src.apps.flights.models import AirflowSearch, Currency, Ticket
 from src.apps.flights.services.ticket_services import TicketPriceConvertor
 from src.apps.flights.tasks import get_search_results_from_providers
 
@@ -17,7 +19,7 @@ class AirflowSearchCreateAPIView(CreateAPIView):
 
     @swagger_auto_schema(
         request_body=no_body,
-        responses={status.HTTP_201_CREATED: openapi.Response("UUID of AirflowSearch", AirflowSearchCreateSerializer)}
+        responses={status.HTTP_201_CREATED: openapi.Response("UUID of AirflowSearch", AirflowSearchCreateSerializer)},
     )
     def post(self, request, *args, **kwargs):
         airflow_search = AirflowSearch.objects.create()
@@ -37,12 +39,15 @@ class AirflowSearchRetrieveAPIView(RetrieveAPIView):
 
         currency = get_object_or_404(Currency, title=self.kwargs.get("currency_title"))
 
-        queryset = super().get_queryset().prefetch_related(
-            Prefetch(
-                "tickets",
-                TicketPriceConvertor.get_queryset_with_calculation(
-                    queryset=Ticket.objects.all(),
-                    currency=currency
+        queryset = (
+            super()
+            .get_queryset()
+            .prefetch_related(
+                Prefetch(
+                    "tickets",
+                    TicketPriceConvertor.get_queryset_with_calculation(
+                        queryset=Ticket.objects.all(), currency=currency
+                    ),
                 )
             )
         )

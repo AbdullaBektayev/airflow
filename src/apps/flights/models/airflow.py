@@ -1,9 +1,9 @@
 from typing import Tuple
 
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from src.apps.common.models import CoreModel
-from django.utils.translation import gettext_lazy as _
 
 
 class AirflowSearch(CoreModel):

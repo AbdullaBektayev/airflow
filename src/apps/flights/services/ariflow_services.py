@@ -1,6 +1,8 @@
-import requests
 from rest_framework.generics import get_object_or_404
-from src.apps.flights.models import Currency, Ticket, Provider, AirflowSearch
+
+import requests
+
+from src.apps.flights.models import AirflowSearch, Currency, Provider, Ticket
 
 
 class AirflowService:
@@ -9,13 +11,10 @@ class AirflowService:
         search_results = requests.post(provider_url)
         ticket_create_list = []
         for search_result in search_results.json():
-            pricing = search_result['pricing']
-            currency = get_object_or_404(Currency, title=pricing['currency'])
+            pricing = search_result["pricing"]
+            currency = get_object_or_404(Currency, title=pricing["currency"])
             ticket_obj = Ticket(
-                currency=currency,
-                base_price=pricing['base'],
-                tax_price=pricing['taxes'],
-                airflow_search=airflow_search
+                currency=currency, base_price=pricing["base"], tax_price=pricing["taxes"], airflow_search=airflow_search
             )
             ticket_create_list.append(ticket_obj)
         return ticket_create_list

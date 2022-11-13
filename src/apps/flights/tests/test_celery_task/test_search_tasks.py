@@ -2,7 +2,16 @@ from src.apps.flights.models import AirflowSearch, Ticket
 from src.apps.flights.tasks import get_search_results_from_providers
 
 
-def test_get_search_results_from_providers(db, airflow_search, mocked_provider_a_search, mocked_provider_b_search, provider_a, provider_b, currency_usd, currency_eur):
+def test_get_search_results_from_providers(
+    db,
+    airflow_search,
+    mocked_provider_a_search,
+    mocked_provider_b_search,
+    provider_a,
+    provider_b,
+    currency_usd,
+    currency_eur,
+):
     airflow = airflow_search()
     assert Ticket.objects.count() == 0
     assert airflow.state == AirflowSearch.PENDING

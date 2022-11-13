@@ -1,23 +1,16 @@
-import datetime
 from typing import List
 
-import requests
-import xmltodict
-from rest_framework.generics import get_object_or_404
-
-from src import settings
-from src.apps.flights.models import Currency, Ticket, Provider, AirflowSearch
 from src import celery_app
+from src.apps.flights.models import Currency
 from src.apps.flights.services.ariflow_services import AirflowService
 from src.apps.flights.services.currency_services import CurrencyUpdater
 
 
 def get_update_currency(response_dict) -> List[Currency]:
     currency_list = []
-    for item in response_dict['rates']['item']:
+    for item in response_dict["rates"]["item"]:
         currency_obj, created = Currency.objects.update_or_create(
-            title=item['title'],
-            defaults={"fullname": item['fullname'], "in_kzt": item['description']}
+            title=item["title"], defaults={"fullname": item["fullname"], "in_kzt": item["description"]}
         )
         currency_list.append(currency_obj)
     return currency_list

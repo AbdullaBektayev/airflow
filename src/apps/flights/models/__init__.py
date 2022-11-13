@@ -1,9 +1,9 @@
 from typing import Tuple
 
-from .currency import Currency
-from .ticket import Ticket
-from .provider import Provider
 from .airflow import AirflowSearch
+from .currency import Currency
+from .provider import Provider
+from .ticket import Ticket
 
 
 __all__: Tuple = (

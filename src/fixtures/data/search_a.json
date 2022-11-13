@@ -5,19 +5,19 @@
         "duration": 6300,
         "segments": [
           {
-            "operating_airline": "KC",
-            "marketing_airline": "KC",
-            "flight_number": "951",
-            "equipment": "Airbus A321-100/200",
-            "dep": {
-              "at": "2021-11-12T06:10:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T07:55:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T07:55:00"
             },
-            "baggage": null
+            "baggage": null,
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T06:10:00"
+            },
+            "equipment": "Airbus A321-100/200",
+            "flight_number": "951",
+            "marketing_airline": "KC",
+            "operating_airline": "KC"
           }
         ]
       },
@@ -25,45 +25,45 @@
         "duration": 79200,
         "segments": [
           {
-            "operating_airline": "KC",
-            "marketing_airline": "KC",
-            "flight_number": "893",
-            "equipment": "Airbus 321 Neo",
-            "dep": {
-              "at": "2021-11-13T07:30:00",
-              "airport": "NQZ"
-            },
             "arr": {
-              "at": "2021-11-13T08:15:00",
-              "airport": "DME"
+              "airport": "DME",
+              "at": "2021-11-13T08:15:00"
             },
-            "baggage": null
+            "baggage": null,
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T07:30:00"
+            },
+            "equipment": "Airbus 321 Neo",
+            "flight_number": "893",
+            "marketing_airline": "KC",
+            "operating_airline": "KC"
           },
           {
-            "operating_airline": "KC",
-            "marketing_airline": "KC",
-            "flight_number": "876",
-            "equipment": "Boeing 767",
-            "dep": {
-              "at": "2021-11-13T22:15:00",
-              "airport": "DME"
-            },
             "arr": {
-              "at": "2021-11-14T05:30:00",
-              "airport": "ALA"
+              "airport": "ALA",
+              "at": "2021-11-14T05:30:00"
             },
-            "baggage": null
+            "baggage": null,
+            "dep": {
+              "airport": "DME",
+              "at": "2021-11-13T22:15:00"
+            },
+            "equipment": "Boeing 767",
+            "flight_number": "876",
+            "marketing_airline": "KC",
+            "operating_airline": "KC"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "KC",
     "pricing": {
-      "total": "291.84",
       "base": "291.84",
+      "currency": "EUR",
       "taxes": "0.00",
-      "currency": "EUR"
-    }
+      "total": "291.84"
+    },
+    "refundable": false,
+    "validating_airline": "KC"
   }
 ]

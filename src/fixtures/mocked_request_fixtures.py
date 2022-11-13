@@ -2,6 +2,7 @@ import pytest
 
 from src.settings import NATIONAL_BANK_API
 
+
 PROVIDER_BASE_URL = "http://localhost:9000/api/v1/flights/"
 
 
@@ -29,7 +30,7 @@ def mocked_provider_b_search(requests_mock, json_data_by_path):
 
 @pytest.fixture()
 def mocked_national_bank_api(requests_mock, json_data_by_path):
-    with open("./src/fixtures/data/national_bank_result.xml", 'r') as f:
+    with open("./src/fixtures/data/national_bank_result.xml", "r") as f:
         xml_file = f.read()
     # xml_str = ElementTree.tostring(xml_file, encoding='utf8', method='xml')
     url = NATIONAL_BANK_API + "?fdate=13.11.2022"

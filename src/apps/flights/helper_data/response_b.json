@@ -5,19 +5,19 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "703",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T05:40:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T07:15:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T07:15:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T05:40:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "703",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       },
@@ -25,31 +25,31 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
+            "arr": {
+              "airport": "ALA",
+              "at": "2021-11-13T09:50:00+06:00"
+            },
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T08:15:00+06:00"
+            },
+            "equipment": null,
             "flight_number": "704",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T08:15:00+06:00",
-              "airport": "NQZ"
-            },
-            "arr": {
-              "at": "2021-11-13T09:50:00+06:00",
-              "airport": "ALA"
-            },
-            "baggage": "0PC"
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "DV",
     "pricing": {
-      "total": "19253.00",
       "base": "12000.00",
+      "currency": "KZT",
       "taxes": "7253.00",
-      "currency": "KZT"
-    }
+      "total": "19253.00"
+    },
+    "refundable": false,
+    "validating_airline": "DV"
   },
   {
     "flights": [
@@ -57,19 +57,19 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "703",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T05:40:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T07:15:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T07:15:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T05:40:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "703",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       },
@@ -77,31 +77,31 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "714",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T14:30:00+06:00",
-              "airport": "NQZ"
-            },
             "arr": {
-              "at": "2021-11-13T16:05:00+06:00",
-              "airport": "ALA"
+              "airport": "ALA",
+              "at": "2021-11-13T16:05:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T14:30:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "714",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "DV",
     "pricing": {
-      "total": "19253.00",
       "base": "12000.00",
+      "currency": "KZT",
       "taxes": "7253.00",
-      "currency": "KZT"
-    }
+      "total": "19253.00"
+    },
+    "refundable": false,
+    "validating_airline": "DV"
   },
   {
     "flights": [
@@ -109,19 +109,19 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "703",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T05:40:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T07:15:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T07:15:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T05:40:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "703",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       },
@@ -129,31 +129,31 @@
         "duration": 5100,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
+            "arr": {
+              "airport": "ALA",
+              "at": "2021-11-13T23:55:00+06:00"
+            },
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T22:30:00+06:00"
+            },
+            "equipment": null,
             "flight_number": "724",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T22:30:00+06:00",
-              "airport": "NQZ"
-            },
-            "arr": {
-              "at": "2021-11-13T23:55:00+06:00",
-              "airport": "ALA"
-            },
-            "baggage": "0PC"
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "DV",
     "pricing": {
-      "total": "19253.00",
       "base": "12000.00",
+      "currency": "KZT",
       "taxes": "7253.00",
-      "currency": "KZT"
-    }
+      "total": "19253.00"
+    },
+    "refundable": false,
+    "validating_airline": "DV"
   },
   {
     "flights": [
@@ -161,19 +161,19 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "713",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T12:00:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T13:35:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T13:35:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T12:00:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "713",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       },
@@ -181,31 +181,31 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
+            "arr": {
+              "airport": "ALA",
+              "at": "2021-11-13T09:50:00+06:00"
+            },
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T08:15:00+06:00"
+            },
+            "equipment": null,
             "flight_number": "704",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T08:15:00+06:00",
-              "airport": "NQZ"
-            },
-            "arr": {
-              "at": "2021-11-13T09:50:00+06:00",
-              "airport": "ALA"
-            },
-            "baggage": "0PC"
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "DV",
     "pricing": {
-      "total": "19253.00",
       "base": "12000.00",
+      "currency": "KZT",
       "taxes": "7253.00",
-      "currency": "KZT"
-    }
+      "total": "19253.00"
+    },
+    "refundable": false,
+    "validating_airline": "DV"
   },
   {
     "flights": [
@@ -213,19 +213,19 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "713",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T12:00:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T13:35:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T13:35:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T12:00:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "713",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       },
@@ -233,31 +233,31 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "714",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T14:30:00+06:00",
-              "airport": "NQZ"
-            },
             "arr": {
-              "at": "2021-11-13T16:05:00+06:00",
-              "airport": "ALA"
+              "airport": "ALA",
+              "at": "2021-11-13T16:05:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T14:30:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "714",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "DV",
     "pricing": {
-      "total": "19253.00",
       "base": "12000.00",
+      "currency": "KZT",
       "taxes": "7253.00",
-      "currency": "KZT"
-    }
+      "total": "19253.00"
+    },
+    "refundable": false,
+    "validating_airline": "DV"
   },
   {
     "flights": [
@@ -265,19 +265,19 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "713",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T12:00:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T13:35:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T13:35:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T12:00:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "713",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       },
@@ -285,31 +285,31 @@
         "duration": 5100,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
+            "arr": {
+              "airport": "ALA",
+              "at": "2021-11-13T23:55:00+06:00"
+            },
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T22:30:00+06:00"
+            },
+            "equipment": null,
             "flight_number": "724",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T22:30:00+06:00",
-              "airport": "NQZ"
-            },
-            "arr": {
-              "at": "2021-11-13T23:55:00+06:00",
-              "airport": "ALA"
-            },
-            "baggage": "0PC"
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "DV",
     "pricing": {
-      "total": "19253.00",
       "base": "12000.00",
+      "currency": "KZT",
       "taxes": "7253.00",
-      "currency": "KZT"
-    }
+      "total": "19253.00"
+    },
+    "refundable": false,
+    "validating_airline": "DV"
   },
   {
     "flights": [
@@ -317,19 +317,19 @@
         "duration": 5400,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "723",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T20:00:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T21:30:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T21:30:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T20:00:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "723",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       },
@@ -337,31 +337,31 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
+            "arr": {
+              "airport": "ALA",
+              "at": "2021-11-13T09:50:00+06:00"
+            },
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T08:15:00+06:00"
+            },
+            "equipment": null,
             "flight_number": "704",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T08:15:00+06:00",
-              "airport": "NQZ"
-            },
-            "arr": {
-              "at": "2021-11-13T09:50:00+06:00",
-              "airport": "ALA"
-            },
-            "baggage": "0PC"
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "DV",
     "pricing": {
-      "total": "19253.00",
       "base": "12000.00",
+      "currency": "KZT",
       "taxes": "7253.00",
-      "currency": "KZT"
-    }
+      "total": "19253.00"
+    },
+    "refundable": false,
+    "validating_airline": "DV"
   },
   {
     "flights": [
@@ -369,19 +369,19 @@
         "duration": 5400,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "723",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T20:00:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T21:30:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T21:30:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T20:00:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "723",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       },
@@ -389,31 +389,31 @@
         "duration": 5700,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "714",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T14:30:00+06:00",
-              "airport": "NQZ"
-            },
             "arr": {
-              "at": "2021-11-13T16:05:00+06:00",
-              "airport": "ALA"
+              "airport": "ALA",
+              "at": "2021-11-13T16:05:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T14:30:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "714",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "DV",
     "pricing": {
-      "total": "19253.00",
       "base": "12000.00",
+      "currency": "KZT",
       "taxes": "7253.00",
-      "currency": "KZT"
-    }
+      "total": "19253.00"
+    },
+    "refundable": false,
+    "validating_airline": "DV"
   },
   {
     "flights": [
@@ -421,19 +421,19 @@
         "duration": 5400,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "723",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T20:00:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T21:30:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T21:30:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T20:00:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "723",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       },
@@ -441,31 +441,31 @@
         "duration": 5100,
         "segments": [
           {
-            "operating_airline": "DV",
-            "marketing_airline": "DV",
-            "flight_number": "724",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T22:30:00+06:00",
-              "airport": "NQZ"
-            },
             "arr": {
-              "at": "2021-11-13T23:55:00+06:00",
-              "airport": "ALA"
+              "airport": "ALA",
+              "at": "2021-11-13T23:55:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T22:30:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "724",
+            "marketing_airline": "DV",
+            "operating_airline": "DV"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "DV",
     "pricing": {
-      "total": "19253.00",
       "base": "12000.00",
+      "currency": "KZT",
       "taxes": "7253.00",
-      "currency": "KZT"
-    }
+      "total": "19253.00"
+    },
+    "refundable": false,
+    "validating_airline": "DV"
   },
   {
     "flights": [
@@ -473,19 +473,19 @@
         "duration": 6300,
         "segments": [
           {
-            "operating_airline": "KC",
-            "marketing_airline": "KC",
-            "flight_number": "951",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-12T06:10:00+06:00",
-              "airport": "ALA"
-            },
             "arr": {
-              "at": "2021-11-12T07:55:00+06:00",
-              "airport": "NQZ"
+              "airport": "NQZ",
+              "at": "2021-11-12T07:55:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "ALA",
+              "at": "2021-11-12T06:10:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "951",
+            "marketing_airline": "KC",
+            "operating_airline": "KC"
           }
         ]
       },
@@ -493,30 +493,30 @@
         "duration": 6000,
         "segments": [
           {
-            "operating_airline": "KC",
-            "marketing_airline": "KC",
-            "flight_number": "952",
-            "equipment": null,
-            "dep": {
-              "at": "2021-11-13T08:55:00+06:00",
-              "airport": "NQZ"
-            },
             "arr": {
-              "at": "2021-11-13T10:35:00+06:00",
-              "airport": "ALA"
+              "airport": "ALA",
+              "at": "2021-11-13T10:35:00+06:00"
             },
-            "baggage": "0PC"
+            "baggage": "0PC",
+            "dep": {
+              "airport": "NQZ",
+              "at": "2021-11-13T08:55:00+06:00"
+            },
+            "equipment": null,
+            "flight_number": "952",
+            "marketing_airline": "KC",
+            "operating_airline": "KC"
           }
         ]
       }
     ],
-    "refundable": false,
-    "validating_airline": "KC",
     "pricing": {
-      "total": "94788.00",
       "base": "85570.00",
+      "currency": "KZT",
       "taxes": "9218.00",
-      "currency": "KZT"
-    }
+      "total": "94788.00"
+    },
+    "refundable": false,
+    "validating_airline": "KC"
   }
 ]
