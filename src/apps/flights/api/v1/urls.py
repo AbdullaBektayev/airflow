@@ -1,9 +1,12 @@
 from django.urls import path
 
 from src.apps.flights.api.v1.views import (
-    ProviderAListAPIView, ProviderBListAPIView, AirflowSearchCreateAPIView, \
-    AirflowSearchRetrieveAPIView
+    AirflowSearchCreateAPIView,
+    AirflowSearchRetrieveAPIView,
+    ProviderAListAPIView,
+    ProviderBListAPIView,
 )
+
 
 urlpatterns = [
     path("provider-a/search/", ProviderAListAPIView.as_view(), name="provider-a-search"),

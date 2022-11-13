@@ -4,6 +4,7 @@ from celery.signals import worker_ready
 from ..django import TIME_ZONE as DJANGO_TIME_ZONE
 from ..environment import env
 
+
 CELERY_TASK_ALWAYS_EAGER = env.bool("SRC_CELERY_TASK_ALWAYS_EAGER", default=False)
 CELERY_BROKER_URL = env.str("SRC_CELERY_BROKER", default="redis://redis:6379/1")
 
@@ -19,4 +20,4 @@ CELERYBEAT_SCHEDULE = {
 @worker_ready.connect
 def updated_currency_at_start(sender, **kwargs):
     with sender.app.connection() as conn:
-        sender.app.send_task('flights.update_currency_task', connection=conn)
+        sender.app.send_task("flights.update_currency_task", connection=conn)

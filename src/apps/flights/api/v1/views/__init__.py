@@ -5,5 +5,8 @@ from src.apps.flights.api.v1.views.provider_views import ProviderAListAPIView, P
 
 
 __all__: Tuple = (
-    "ProviderAListAPIView", "ProviderBListAPIView", "AirflowSearchCreateAPIView", "AirflowSearchRetrieveAPIView"
+    "ProviderAListAPIView",
+    "ProviderBListAPIView",
+    "AirflowSearchCreateAPIView",
+    "AirflowSearchRetrieveAPIView",
 )
