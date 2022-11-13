@@ -139,3 +139,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DEFAULT_DECIMAL_PLACES: int = 2
 DEFAULT_MAX_DIGITS: int = 12
+
+NATIONAL_BANK_API: str = env.str("NATIONAL_BANK_API", default='https://www.nationalbank.kz/rss/get_rates.cfm')
