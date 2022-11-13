@@ -7,7 +7,7 @@ from rest_framework.response import Response
 
 from src.apps.flights.api.v1.serializers import AirflowSearchCreateSerializer, AirflowSearchRetrieveSerializer
 from src.apps.flights.models import Ticket, AirflowSearch, Currency
-from src.apps.flights.services.ticket_price_convertor import TicketPriceConvertor
+from src.apps.flights.services.ticket_services import TicketPriceConvertor
 from src.apps.flights.tasks import get_search_results_from_providers
 
 
