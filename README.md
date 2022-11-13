@@ -28,6 +28,8 @@ Our application runs with 2 step
 
 ### Firsts step ###
 
+Create .env file and copy paste text from .env.example file
+
 Create virtual environment, and install Python requirements:
 
 ```bash
