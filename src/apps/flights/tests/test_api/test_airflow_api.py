@@ -16,7 +16,7 @@ def test_airflow_search_create_success(
 
 
 def test_airflow_search_by_uuid_success(
-    db, unauthorized_api_client, json_data_by_path, airflow_search_kc, currency_kzt, flight_a, flight_b,
+    db, unauthorized_api_client, json_data_by_path, airflow_search_kc, currency_kzt, ticket_a, ticket_b,
     remove_uuid_fields_from_response
 ):
     response = unauthorized_api_client.get(

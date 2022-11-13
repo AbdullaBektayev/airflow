@@ -7,7 +7,7 @@ from rest_framework.response import Response
 
 from src.apps.flights.api.v1.serializers import AirflowSearchCreateSerializer
 from src.apps.flights.api.v1.serializers.airflow_search_serializers import AirflowSearchRetrieveSerializer
-from src.apps.flights.models import Flight, AirflowSearch, Currency
+from src.apps.flights.models import Ticket, AirflowSearch, Currency
 from src.apps.flights.tasks import get_search_results_from_providers
 
 
@@ -39,7 +39,7 @@ class AirflowSearchRetrieveAPIView(RetrieveAPIView):
         queryset = super().get_queryset().prefetch_related(
             Prefetch(
                 "flights",
-                Flight.objects.select_related("currency").annotate(
+                Ticket.objects.select_related("currency").annotate(
                     total_price=F("base_price") + F("tax_price"),
                     converted_price=(F("total_price")*F("currency__in_kzt"))/currency.in_kzt,
                     converted_currency=Value(currency.title, CharField())

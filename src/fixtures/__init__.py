@@ -5,5 +5,5 @@ from .airflow_search_fixtures import *  # noqa: F401
 from .provider_fixtures import *  # noqa: F401
 from .mocked_request_fixtures import *  # noqa: F401
 from .currency_fixtures import *  # noqa: F401
-from .flight_fixtures import *  # noqa: F401
+from .ticket_fixtures import *  # noqa: F401
 

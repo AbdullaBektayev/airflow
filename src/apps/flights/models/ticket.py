@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from src.settings import DEFAULT_MAX_DIGITS, DEFAULT_DECIMAL_PLACES
 
 
-class Flight(CoreModel):
+class Ticket(CoreModel):
 
     base_price = models.DecimalField(max_digits=DEFAULT_MAX_DIGITS, decimal_places=DEFAULT_DECIMAL_PLACES)
     tax_price = models.DecimalField(max_digits=DEFAULT_MAX_DIGITS, decimal_places=DEFAULT_DECIMAL_PLACES)

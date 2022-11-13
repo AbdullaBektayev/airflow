@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from src.apps.flights.models import AirflowSearch, Flight
+from src.apps.flights.models import AirflowSearch, Ticket
 from src.settings import DEFAULT_MAX_DIGITS, DEFAULT_DECIMAL_PLACES
 
 
@@ -43,17 +43,17 @@ class FlightForAirflowSearchSerializer(serializers.ModelSerializer):
     price = serializers.SerializerMethodField()
 
     @staticmethod
-    def get_pricing(flight):
-        serializer = PricingForFlightSerializer(flight)
+    def get_pricing(ticket):
+        serializer = PricingForFlightSerializer(ticket)
         return serializer.data
 
     @staticmethod
-    def get_price(flight):
-        serializer = PriceForFlightSerializer(flight)
+    def get_price(ticket):
+        serializer = PriceForFlightSerializer(ticket)
         return serializer.data
 
     class Meta:
-        model = Flight
+        model = Ticket
         fields = (
             "uuid",
             "pricing",

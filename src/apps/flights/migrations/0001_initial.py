@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name="Flight",
+            name="Ticket",
             fields=[
                 ("uuid", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
                 ("created", models.DateTimeField(auto_now_add=True, db_index=True, verbose_name="created")),
