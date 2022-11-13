@@ -35,9 +35,8 @@ def update_currency_task():
     return "Currency was updated"
 
 
-async def provider_search(provider_url, airflow_search):
-    async with httpx.AsyncClient() as client:
-        search_results = await client.get(provider_url)
+def provider_search(provider_url, airflow_search):
+    search_results = requests.post(provider_url)
     flight_create_list = []
     for search_result in search_results.json():
         pricing = search_result['pricing']
@@ -56,10 +55,10 @@ async def provider_search(provider_url, airflow_search):
     name="flights.get_search_results_from_providers",
 )
 def get_search_results_from_providers(airflow_search_uuid):
+    airflow_search = AirflowSearch.objects.get(uuid=airflow_search_uuid)
     for provider in Provider.objects.all():
         flight_create_list = provider_search(provider_url=provider.url, airflow_search=airflow_search)
         Flight.objects.bulk_create(flight_create_list)
-    airflow_search = AirflowSearch.objects.get(uuid=airflow_search_uuid)
     airflow_search.state = AirflowSearch.COMPLETED
     airflow_search.save(update_fields=("state",))
     return {"result": "Search completed"}
