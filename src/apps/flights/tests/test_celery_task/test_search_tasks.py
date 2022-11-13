@@ -1,7 +1,10 @@
+import pytest
+
 from src.apps.flights.models import AirflowSearch, Ticket
 from src.apps.flights.tasks import get_search_results_from_providers
 
 
+@pytest.mark.django_db(transaction=True)
 def test_get_search_results_from_providers(
     db,
     airflow_search,
@@ -11,6 +14,8 @@ def test_get_search_results_from_providers(
     provider_b,
     currency_usd,
     currency_eur,
+    celery_app,
+    celery_worker,
 ):
     airflow = airflow_search()
     assert Ticket.objects.count() == 0
