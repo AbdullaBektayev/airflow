@@ -1,9 +1,13 @@
 import json
 from time import sleep
 
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema, no_body
 from rest_framework import status
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
+
+from src.apps.flights.api.v1.serializers.provider_serializer import ProviderSerializer
 
 
 class GenericProviderCreateAPIView(CreateAPIView):
@@ -26,6 +30,10 @@ class GenericProviderCreateAPIView(CreateAPIView):
     def _sleep_time(self):
         return sleep(self.sleep_time)
 
+    @swagger_auto_schema(
+        request_body=no_body,
+        responses={status.HTTP_201_CREATED: openapi.Response("Return static response", ProviderSerializer)}
+    )
     def post(self, request, *args, **kwargs):
         json_file_path = self._get_json_file()
         response_json = self._get_json_response(json_file_path=json_file_path)

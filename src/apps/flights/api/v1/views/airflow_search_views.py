@@ -1,4 +1,6 @@
 from django.db.models import Prefetch, F, Value, CharField
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema, no_body
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, get_object_or_404, RetrieveAPIView
 from rest_framework.response import Response
@@ -13,6 +15,10 @@ class AirflowSearchCreateAPIView(CreateAPIView):
     serializer_class = AirflowSearchCreateSerializer
     queryset = AirflowSearch.objects.all()
 
+    @swagger_auto_schema(
+        request_body=no_body,
+        responses={status.HTTP_201_CREATED: openapi.Response("UUID of AirflowSearch", AirflowSearchCreateSerializer)}
+    )
     def post(self, request, *args, **kwargs):
         airflow_search = AirflowSearch.objects.create()
         serializer = self.get_serializer(airflow_search)
@@ -26,6 +32,9 @@ class AirflowSearchRetrieveAPIView(RetrieveAPIView):
     serializer_class = AirflowSearchRetrieveSerializer
 
     def get_queryset(self):
+        if getattr(self, "swagger_fake_view", False):  # pragma: no cover
+            return AirflowSearch.objects.none()
+
         currency = get_object_or_404(Currency, title=self.kwargs.get("currency_title"))
         queryset = super().get_queryset().prefetch_related(
             Prefetch(
