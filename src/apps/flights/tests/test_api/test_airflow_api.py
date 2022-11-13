@@ -1,5 +1,3 @@
-import time
-
 from rest_framework import status
 from rest_framework.reverse import reverse
 
@@ -15,3 +13,16 @@ def test_airflow_search_create_success(
     assert AirflowSearch.objects.count() == 1
     airflow_search_obj = AirflowSearch.objects.first()
     assert airflow_search_obj.state == AirflowSearch.PENDING
+
+
+def test_airflow_search_by_uuid_success(
+    db, unauthorized_api_client, json_data_by_path, airflow_search_kc, currency_kzt
+):
+    response = unauthorized_api_client.post(
+        reverse(
+            "api-v1-flights:airflow-search-retrieve",
+            kwargs={"pk": airflow_search_kc.uuid, "currency": currency_kzt.title}
+        ),
+    )
+    assert response.status_code == status.HTTP_201_CREATED
+    # assert response.json() == json_data_by_path()
