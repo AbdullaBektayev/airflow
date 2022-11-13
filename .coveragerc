@@ -7,12 +7,15 @@ omit =
     */urls.py
     src/fixtures/*
     src/apps/accounts/api/authentication.py
-    src/apps/common/management/commands/generate_secretkey.py
-    src/apps/common/management/commands/startapp.py
+    src/apps/common/management/commands/*
     src/apps/common/utils/redis.py
     src/loggers.py
     src/wsgi.py
+    src/gunicorn.py
+    src/settings/contrib/storages.py
+    */admin/*
     */admin.py
+    manage.py
 
 [report]
 exclude_lines =

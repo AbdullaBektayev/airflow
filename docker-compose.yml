@@ -10,11 +10,6 @@ services:
     restart: always
     volumes:
       - pg_data:/var/lib/postgresql/data:rw
-  mailhog:
-    image: mailhog/mailhog:latest
-    ports:
-      - "127.0.0.1:1025:1025/tcp"
-      - "127.0.0.1:8025:8025/tcp"
   redis:
     image: redis:6.2.6
     ports:
