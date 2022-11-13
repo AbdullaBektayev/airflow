@@ -21,7 +21,6 @@ class AirflowService:
 
     @classmethod
     def get_search_results_from_providers(cls, airflow_search_uuid):
-        print(airflow_search_uuid)
         airflow_search = AirflowSearch.objects.get(uuid=airflow_search_uuid)
         for provider in Provider.objects.all():
             ticket_create_list = cls._provider_search(provider_url=provider.url, airflow_search=airflow_search)
