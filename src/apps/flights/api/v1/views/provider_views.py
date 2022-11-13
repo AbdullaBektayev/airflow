@@ -15,6 +15,7 @@ from src.apps.flights.api.v1.serializers.provider_serializer import ProviderSeri
 class GenericProviderCreateAPIView(CreateAPIView):
     json_file_path = None
     sleep_time = 30
+    serializer_class = ProviderSerializer
 
     @staticmethod
     def _get_json_response(json_file_path):
