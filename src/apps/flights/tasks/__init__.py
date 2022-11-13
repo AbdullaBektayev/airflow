@@ -1,6 +1,6 @@
 from typing import Tuple
 
-from .token_tasks import delete_expired_tasks
+from src.apps.flights.tasks.update_currency_tasks import update_currency_task, get_search_results_from_providers
 
 
-__all__: Tuple = ("delete_expired_tasks",)
+__all__: Tuple = ("update_currency_task", "get_search_results_from_providers",)

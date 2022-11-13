@@ -30,7 +30,6 @@ class GenericProviderCreateAPIView(CreateAPIView):
         json_file_path = self._get_json_file()
         response_json = self._get_json_response(json_file_path=json_file_path)
         self._sleep_time()
-        # print('a', a)
         return Response(response_json, status=status.HTTP_201_CREATED)
 
 
