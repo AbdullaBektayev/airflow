@@ -58,5 +58,5 @@ python manage.py runserver 0.0.0.0:9000
 Open new terminal window for celery, and enter this command 
 
 ```bash
-celery -A src worker -l INFO
+celery -A src worker -l INFO -f celery.logs
 ```

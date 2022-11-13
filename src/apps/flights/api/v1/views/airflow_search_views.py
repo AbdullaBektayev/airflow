@@ -25,7 +25,7 @@ class AirflowSearchCreateAPIView(CreateAPIView):
         airflow_search = AirflowSearch.objects.create()
         serializer = self.get_serializer(airflow_search)
         headers = self.get_success_headers(serializer.data)
-        get_search_results_from_providers.delay(airflow_search_uuid=airflow_search.uuid)
+        get_search_results_from_providers.apply_async(args=[airflow_search.uuid])
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
