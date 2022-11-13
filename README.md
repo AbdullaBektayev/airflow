@@ -9,14 +9,26 @@
 
 ### API documentation: ###
 
-* ReDoc web UI: [https://example.com/_platform/docs/v1/redoc/](https://example.com/_platform/docs/v1/redoc/)
-* Swagger web UI: [https://example.com/_platform/docs/v1/swagger/](https://example.com/_platform/docs/v1/swagger/)
-* Swagger JSON: [https://example.com/_platform/docs/v1/swagger.json](https://example.com/_platform/docs/v1/swagger.json)
-* Swagger YAML: [https://example.com/_platform/docs/v1/swagger.yaml](https://example.com/_platform/docs/v1/swagger.yaml)
+* ReDoc web UI: [http://localhost:9000/_platform/docs/v1/redoc/](https://example.com/_platform/docs/v1/redoc/)
+* Swagger web UI: [http://localhost:9000/_platform/docs/v1/swagger/](https://example.com/_platform/docs/v1/swagger/)
+* Swagger JSON: [http://localhost:9000/_platform/docs/v1/swagger.json](https://example.com/_platform/docs/v1/swagger.json)
+* Swagger YAML: [http://localhost:9000/_platform/docs/v1/swagger.yaml](https://example.com/_platform/docs/v1/swagger.yaml)
+
+### Small Information about project: ###
+
+In this application I removed Dockerfile because it is gets long time for build,
+and for restart app. Because we need to do docker-compose down/up when we restart app.
+And we need to build each time when we add new requirements for our project.
+And for that purpose I am not containerized main app in dockerfile 
+instead we start django app in terminal and other component will run with docker-compose.
+
 
 ### First run: ###
+Our application runs with 2 step
 
-Install Python requirements:
+### Firsts step ###
+
+Create virtual environment, and install Python requirements:
 
 ```bash
 pip install -r requirments-dev.txt
@@ -37,5 +49,14 @@ python manage.py migrate
 Run Django server:
 
 ```bash
-python manage.py runserver
+python manage.py runserver 0.0.0.0:9000
+```
+
+
+### Second step ###
+
+Open new terminal window for celery, and enter this command 
+
+```bash
+celery -A src worker -l INFO
 ```
