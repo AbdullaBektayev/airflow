@@ -43,8 +43,8 @@ def provider_search(provider_url, airflow_search):
         currency = get_object_or_404(Currency, title=pricing['currency'])
         flight_obj = Flight(
             currency=currency,
-            base_price=pricing['base_price'],
-            tax_price=pricing['tax_price'],
+            base_price=pricing['base'],
+            tax_price=pricing['taxes'],
             airflow_search=airflow_search
         )
         flight_create_list.append(flight_obj)
