@@ -14,7 +14,7 @@ class AirflowSearchCreateSerializer(serializers.ModelSerializer):
         )
 
 
-class PricingForFlightSerializer(serializers.Serializer):
+class PricingForTicketSerializer(serializers.Serializer):
     base_price = serializers.DecimalField(max_digits=DEFAULT_MAX_DIGITS, decimal_places=DEFAULT_DECIMAL_PLACES)
     tax_price = serializers.DecimalField(max_digits=DEFAULT_MAX_DIGITS, decimal_places=DEFAULT_DECIMAL_PLACES)
     total_price = serializers.DecimalField(max_digits=DEFAULT_MAX_DIGITS, decimal_places=DEFAULT_DECIMAL_PLACES)
@@ -27,7 +27,7 @@ class PricingForFlightSerializer(serializers.Serializer):
         raise NotImplementedError()
 
 
-class PriceForFlightSerializer(serializers.Serializer):
+class PriceForTicketSerializer(serializers.Serializer):
     converted_price = serializers.DecimalField(max_digits=DEFAULT_MAX_DIGITS, decimal_places=DEFAULT_DECIMAL_PLACES)
     converted_currency = serializers.CharField()
 
@@ -38,18 +38,18 @@ class PriceForFlightSerializer(serializers.Serializer):
         raise NotImplementedError()
 
 
-class FlightForAirflowSearchSerializer(serializers.ModelSerializer):
+class TicketForAirflowSearchSerializer(serializers.ModelSerializer):
     pricing = serializers.SerializerMethodField()
     price = serializers.SerializerMethodField()
 
     @staticmethod
     def get_pricing(ticket):
-        serializer = PricingForFlightSerializer(ticket)
+        serializer = PricingForTicketSerializer(ticket)
         return serializer.data
 
     @staticmethod
     def get_price(ticket):
-        serializer = PriceForFlightSerializer(ticket)
+        serializer = PriceForTicketSerializer(ticket)
         return serializer.data
 
     class Meta:
@@ -62,12 +62,12 @@ class FlightForAirflowSearchSerializer(serializers.ModelSerializer):
 
 
 class AirflowSearchRetrieveSerializer(serializers.ModelSerializer):
-    flights = FlightForAirflowSearchSerializer(many=True, read_only=True)
+    tickets = TicketForAirflowSearchSerializer(many=True, read_only=True)
 
     class Meta:
         model = AirflowSearch
         fields = (
             "uuid",
-            "flights",
+            "tickets",
             "state"
         )

@@ -14,14 +14,14 @@ class Ticket(CoreModel):
         on_delete=models.RESTRICT,
         verbose_name=_("airflow_search"),
         help_text=_("airflow_search"),
-        related_name="flights",
+        related_name="tickets",
     )
     currency = models.ForeignKey(
         to="flights.Currency",
         on_delete=models.RESTRICT,
         verbose_name=_("currency"),
         help_text=_("currency"),
-        related_name="flights",
+        related_name="tickets",
     )
 
     def __str__(self):

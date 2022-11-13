@@ -5,8 +5,7 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView, get_object_or_404, RetrieveAPIView
 from rest_framework.response import Response
 
-from src.apps.flights.api.v1.serializers import AirflowSearchCreateSerializer
-from src.apps.flights.api.v1.serializers.airflow_search_serializers import AirflowSearchRetrieveSerializer
+from src.apps.flights.api.v1.serializers import AirflowSearchCreateSerializer, AirflowSearchRetrieveSerializer
 from src.apps.flights.models import Ticket, AirflowSearch, Currency
 from src.apps.flights.tasks import get_search_results_from_providers
 
@@ -38,7 +37,7 @@ class AirflowSearchRetrieveAPIView(RetrieveAPIView):
         currency = get_object_or_404(Currency, title=self.kwargs.get("currency_title"))
         queryset = super().get_queryset().prefetch_related(
             Prefetch(
-                "flights",
+                "tickets",
                 Ticket.objects.select_related("currency").annotate(
                     total_price=F("base_price") + F("tax_price"),
                     converted_price=(F("total_price")*F("currency__in_kzt"))/currency.in_kzt,
