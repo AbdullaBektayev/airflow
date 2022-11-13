@@ -53,7 +53,7 @@ async def provider_search(provider_url, airflow_search):
 
 
 @celery_app.task(
-    name="flight.get_search_results_from_providers",
+    name="flights.get_search_results_from_providers",
 )
 def get_search_results_from_providers(airflow_search_uuid):
     for provider in Provider.objects.all():
@@ -62,4 +62,4 @@ def get_search_results_from_providers(airflow_search_uuid):
     airflow_search = AirflowSearch.objects.get(uuid=airflow_search_uuid)
     airflow_search.state = AirflowSearch.COMPLETED
     airflow_search.save(update_fields=("state",))
-    return "Search completed"
+    return {"result": "Search completed"}
