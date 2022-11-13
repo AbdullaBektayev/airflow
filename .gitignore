@@ -356,3 +356,4 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/vim,osx,emacs,linux,macos,django,python,windows,pycharm,virtualenv,sublimetext,visualstudiocode
 celery.logs
+test-results
