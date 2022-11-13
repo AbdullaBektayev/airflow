@@ -2,7 +2,7 @@ from src.apps.flights.models import AirflowSearch
 from src.apps.flights.tasks import get_search_results_from_providers
 
 
-def test_get_search_results_from_providers(db, airflow_search, provider_a, provider_b):
+def test_get_search_results_from_providers(db, airflow_search, provider_a, provider_b, currency_usd, currency_eur):
     airflow = airflow_search()
     assert airflow.state == AirflowSearch.PENDING
 
