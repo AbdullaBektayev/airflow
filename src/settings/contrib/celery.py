@@ -18,6 +18,6 @@ CELERYBEAT_SCHEDULE = {
 
 
 @worker_ready.connect
-def updated_currency_at_start(sender, **kwargs):
+def updated_currency_at_start(sender, **kwargs):  # pragma: no cover
     with sender.app.connection() as conn:
         sender.app.send_task("flights.update_currency_task", connection=conn)

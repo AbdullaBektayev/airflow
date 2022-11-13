@@ -83,11 +83,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "src.wsgi.application"
 
-if os.getenv("DATABASE_URL", default=None) is not None:
+if os.getenv("DATABASE_URL", default=None) is not None:  # pragma: no cover
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
     }
-else:
+else:  # pragma: no cover
     DATABASES = {
         "default": dj_database_url.parse("postgresql://postgres:awesome_password_1@localhost:5432/src_db"),
     }

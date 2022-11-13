@@ -5,16 +5,16 @@ jobs:
   test:
     working_directory: ~/project
     docker:
-      - image: circleci/python:3.9.9
+      - image: cimg/python:3.10.5
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_PASS
         environment:
-          SRC_EMAIL_BACKEND: django.core.mail.backends.dummy.EmailBackend
-          SRC_SECRET_KEY: stub
+          DJANGO_SECRET_KEY: stub
           SRC_USE_SENTRY: off
-          SRC_DEBUG: off
-          SRC_DATABASE_URL: postgresql://postgres:test_db_password@localhost/src_test_db
+          DEBUG: off
+          DATABASE_URL: postgresql://postgres:test_db_password@localhost/src_test_db
+          SRC_EMAIL_BACKEND: django.core.mail.backends.dummy.EmailBackend
           SRC_CELERY_BROKER: redis://localhost:6379/1
           SRC_CELERY_TASK_ALWAYS_EAGER: on
       - image: postgres:14.1
@@ -35,51 +35,49 @@ jobs:
       - run:
           name: Install Python dependencies
           command: |
-            python3 -m venv .env
-            . .env/bin/activate
+            python3 -m venv .pyenv
+            . .pyenv/bin/activate
             pip install -U pip
             pip install -r requirements-dev.txt
       - save_cache:
           key: python-deps-v1-{{ checksum "requirements-dev.txt" }}
           paths:
-            - ".env"
+            - ".pyenv"
       - run:
           name: Check `black`
-          command: . .env/bin/activate && black --check ./src
+          command: . .pyenv/bin/activate && black --check ./src
       - run:
           name: Check `isort`
-          command: . .env/bin/activate && isort --check --skip .env ./src
+          command: . .pyenv/bin/activate && isort --check --skip .pyenv ./src
       - run:
           name: Check `pylama`
-          command: . .env/bin/activate && pylama ./src
+          command: . .pyenv/bin/activate && pylama -o pylama.ini ./src
       - run:
           name: Check `bandit`
-          command: . .env/bin/activate && bandit -r --skip=B101 ./src
+          command: . .pyenv/bin/activate && bandit -r --skip=B101 ./src
       - run:
           name: Check `safety`
-          command: . .env/bin/activate && safety check
-      - run:
-          name: Check `pylint`
-          command: . .env/bin/activate && pylint --django-settings-module=src.settings --ignore=tests src
+          command: . .pyenv/bin/activate && safety check -r requirements.txt
       - run:
           name: Wait for Redis
           command: dockerize -wait tcp://localhost:6379 -timeout 1m
       - run:
           name: Wait for Postgres
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
-      - run:
-          name: Check for uncreated migrations
-          command: |
-            . .env/bin/activate
-            python3 manage.py makemigrations --check --dry-run
+#         TODO uncomment this line of code when import_export_celery add a migration file
+#      - run:
+#          name: Check for uncreated migrations
+#          command: |
+#            . .pyenv/bin/activate
+#            python3 manage.py makemigrations --check --dry-run
       - run:
           name: Run tests
           command: |
-            . .env/bin/activate
+            . .pyenv/bin/activate
             python3 manage.py collectstatic --no-input
-            pytest --cache-clear --capture=no --showlocals --verbose --cov=src --cov-report html --no-migrations --junitxml ./test-results/test-results.xml
+            pytest --cache-clear --capture=no --showlocals --verbose --cov=src --cov-report term-missing --cov-fail-under=100 --no-migrations --junitxml ./test-results/test-results.xml
       - store_test_results:
-          path: ~/project/test-results
+          path: ~/project/api/test-results
 
 workflows:
   version: 2

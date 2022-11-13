@@ -23,11 +23,11 @@ class GenericProviderCreateAPIView(CreateAPIView):
         return json_data
 
     def _get_json_file(self):
-        if self.json_file_path is None:
+        if self.json_file_path is None:  # pragma: no cover
             raise ValueError("Doesn't have json file path")
         return self.json_file_path
 
-    def _sleep_time(self):
+    def _sleep_time(self):  # pragma: no cover
         return sleep(self.sleep_time)
 
     @swagger_auto_schema(
