@@ -16,7 +16,8 @@ def test_airflow_search_create_success(
 
 
 def test_airflow_search_by_uuid_success(
-    db, unauthorized_api_client, json_data_by_path, airflow_search_kc, currency_kzt
+    db, unauthorized_api_client, json_data_by_path, airflow_search_kc, currency_kzt, flight_a, flight_b,
+    remove_uuid_fields_from_response
 ):
     response = unauthorized_api_client.get(
         reverse(
@@ -24,6 +25,7 @@ def test_airflow_search_by_uuid_success(
             kwargs={"pk": airflow_search_kc.uuid, "currency_title": currency_kzt.title}
         ),
     )
-    print(response.json())
     assert response.status_code == status.HTTP_200_OK
-    # assert response.json() == json_data_by_path()
+    assert remove_uuid_fields_from_response(response.json()) == json_data_by_path(
+        "./src/apps/flights/tests/data/airflow_search_retrieve_response.json"
+    )
