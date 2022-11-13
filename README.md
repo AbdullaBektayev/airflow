@@ -60,3 +60,19 @@ Open new terminal window for celery, and enter this command
 ```bash
 celery -A src worker -l INFO -f celery.logs
 ```
+
+
+### Run Tests : ###
+
+For run tests 
+
+```bash
+pytest --cache-clear --no-migrations --disable-warnings
+```
+
+For run tests with test coverage info
+
+```bash
+pytest --cache-clear --capture=no --showlocals --verbose --cov=src --cov-report term-missing --cov-fail-under=100 --no-migrations --disable-warnings
+```
+
