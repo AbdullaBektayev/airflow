@@ -1,4 +1,4 @@
-from django.db.models import Prefetch, F, Value, CharField
+from django.db.models import Prefetch
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema, no_body
 from rest_framework import status
