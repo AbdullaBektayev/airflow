@@ -20,10 +20,16 @@ class CurrencyUpdater:
             currency_list.append(currency_obj)
         return currency_list
 
+    @staticmethod
+    def _get_query_param():
+        today = datetime.date.today()
+        query_param = f'?fdate={today.strftime("%d.%m.%Y")}'
+        return query_param
+
     @classmethod
     def update_currency(cls):
-        today = datetime.date.today()
-        url = settings.NATIONAL_BANK_API + f'?fdate={today.strftime("%d.%m.%Y")}'
+        query_param = cls._get_query_param()
+        url = settings.NATIONAL_BANK_API + query_param
         request = requests.get(url)
         response_dict = xmltodict.parse(request.text)
         cls._get_update_currency(response_dict)
