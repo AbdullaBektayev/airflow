@@ -20,7 +20,7 @@ def provider(db):  # pylint: disable=unused-argument
 
 @pytest.fixture()
 def provider_a(db):  # pylint: disable=unused-argument
-    provider, created = Provider.objects.get_or_create(
+    provider, created = Provider.objects.update_or_create(
         title="provider_a", defaults={"url": "http://localhost:9000/api/v1/flights/provider-a/search/"}
     )
     return provider
@@ -28,7 +28,7 @@ def provider_a(db):  # pylint: disable=unused-argument
 
 @pytest.fixture()
 def provider_b(db):  # pylint: disable=unused-argument
-    provider, created = Provider.objects.get_or_create(
+    provider, created = Provider.objects.update_or_create(
         title="provider_b", defaults={"url": "http://localhost:9000/api/v1/flights/provider-b/search/"}
     )
     return provider

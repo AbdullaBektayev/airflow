@@ -37,5 +37,5 @@ def currency_eur(db):  # pylint: disable=unused-argument
 
 @pytest.fixture()
 def currency_kzt(db):  # pylint: disable=unused-argument
-    currency, created = Currency.objects.get_or_create(title="KZT", defaults={"fullname": "tenge", "in_kzt": 1})
+    currency, created = Currency.objects.update_or_create(title="KZT", defaults={"fullname": "tenge", "in_kzt": 1})
     return currency
