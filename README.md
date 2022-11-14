@@ -16,7 +16,7 @@
 
 ### Small Information about project: ###
 
-In this application We removed Dockerfile because it is gets long time for build,
+In this application we removed Dockerfile because it is gets long time for build,
 and for restart app. Because we need to do docker-compose down/up when we restart app.
 And we need to build each time when we add new requirements for our project.
 And for that purpose I am not containerized main app in dockerfile 

@@ -12,6 +12,8 @@ __all__: Tuple = (
     "currency_kzt",
 )
 
+from src.apps.flights.models import Currency
+
 
 @pytest.fixture()
 def currency(db):  # pylint: disable=unused-argument
@@ -35,5 +37,5 @@ def currency_eur(db):  # pylint: disable=unused-argument
 
 @pytest.fixture()
 def currency_kzt(db):  # pylint: disable=unused-argument
-
-    return baker.make("flights.Currency", title="KZT", fullname="tenge", in_kzt=1)
+    currency, created = Currency.objects.get_or_create(title="KZT", defaults={"fullname": "tenge", "in_kzt": 1})
+    return currency
