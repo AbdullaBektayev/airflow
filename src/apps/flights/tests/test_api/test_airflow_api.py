@@ -5,10 +5,14 @@ from src.apps.flights.models import AirflowSearch
 
 
 def test_airflow_search_create_success(db, unauthorized_api_client, json_data_by_path, mocker):
+    mocked_task = mocker.patch(
+        "src.apps.flights.tasks.search_result_tasks.get_search_results_from_providers.apply_async", return_value=None
+    )
     response = unauthorized_api_client.post(reverse("api-v1-flights:airflow-search-create"))
     assert response.status_code == status.HTTP_201_CREATED
     assert "search_id" in response.json()
     assert AirflowSearch.objects.count() == 1
+    mocked_task.assert_called_once()
     airflow_search_obj = AirflowSearch.objects.first()
     assert airflow_search_obj.state == AirflowSearch.PENDING
 
